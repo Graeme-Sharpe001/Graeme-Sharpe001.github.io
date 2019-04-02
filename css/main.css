@@ -3,6 +3,7 @@
 body, html {
     height: calc(100% - 2em);
     margin: 0;
+    font-family: "Inconsolata", "Times New Roman";
 }
 
 body {
@@ -65,4 +66,99 @@ ul li a {
     padding: 1.5em 3em;
     background-color: rgba(255, 255, 255, 0.35);
     color: #000;
+}
+
+main {
+    background: #fff;
+    padding: 1em 1.4em;
+}
+
+h1 {
+    margin: 0;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
+
+.cta {
+    display: block;
+    color: #fff;
+    background: deepskyblue;
+    text-decoration: none;
+    padding: 8px 50px;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 4px;
+    margin: 2em 0;
+}
+
+
+
+@media only screen and (min-width: 768px){
+
+    body {
+        display: grid;
+        grid-template-columns: 20% auto;
+        padding: 2em;
+    }
+
+    img {
+        display: none;
+    }
+
+    aside {
+        background: #C4C4C4;
+        grid-template-columns: auto;
+        grid-template-rows: 20% auto;
+        padding: 0;
+    }
+
+    main {
+        padding: 4em;
+        background-size: 70%;
+    }
+
+    #avatar {
+        border-radius: 50%;
+        background: black;
+        width: 50px;
+        height: 50px;
+        margin: 2em auto 1em auto;
+    }
+
+    figcaption {
+        text-align: center;
+        color: #000;
+    }
+
+    ul {
+        display: block;
+        margin-top: 2em;
+        position: relative !important;
+        background: none !important;
+        width: 100% !important;
+    }
+
+    ul li a:hover {
+        background: #fff;
+    }
+
+    nav {
+        background: none;
+    }
+
+    .cta {
+        display: inline-block;
+        font-size: 1.3em;
+        padding: .8em 3em;
+    }
+
+    h1 {
+        font-size: 3em;
+        
+    }
+    
 }

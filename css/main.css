@@ -7,12 +7,10 @@ body, html {
 }
 
 body {
-    background-color: black;
-    /*background-color: #C4C4C4;*/
-    /*background: -webkit-linear-gradient(45deg, #CACACA 0%, #948F8F 100%);*/
-    /*background: linear-gradient(45deg, #CACACA 0%, #948F8F 100%);*/
-    /*background-repeat: no-repeat;*/
-    /*background-attachment: fixed;*/
+    background: -webkit-linear-gradient(45deg, #000 0%, #948F8F 100%);
+    background: linear-gradient(45deg, #000 0%, #948F8F 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 aside {
@@ -98,7 +96,7 @@ p {
 
 
 
-@media only screen and (min-width: 768px){
+@media only screen and (min-device-width: 768px){
 
     body {
         display: grid;

@@ -7,11 +7,12 @@ body, html {
 }
 
 body {
-    background-color: #C4C4C4;
-    background: -webkit-linear-gradient(45deg, #CACACA 0%, #948F8F 100%);
-    background: linear-gradient(45deg, #CACACA 0%, #948F8F 100%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-color: black;
+    /*background-color: #C4C4C4;*/
+    /*background: -webkit-linear-gradient(45deg, #CACACA 0%, #948F8F 100%);*/
+    /*background: linear-gradient(45deg, #CACACA 0%, #948F8F 100%);*/
+    /*background-repeat: no-repeat;*/
+    /*background-attachment: fixed;*/
 }
 
 aside {
@@ -22,7 +23,7 @@ aside {
 }
 
 img {
-    width: 100px;
+    width: 40px;
     cursor: pointer;
 
 }

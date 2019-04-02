@@ -1,7 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
+
+body, html {
+    height: calc(100% - 2em);
+    margin: 0;
+}
+
 body {
     background-color: #C4C4C4;
     background: -webkit-linear-gradient(45deg, #CACACA 0%, #948F8F 100%);
     background: linear-gradient(45deg, #CACACA 0%, #948F8F 100%);
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+aside {
+    color: #fff;
+    display: grid;
+    grid-template-columns: auto 100px;
+
+}
+
+img {
+    width 100px;
+    cursor: pointer;
+
+}
+
+figure {
+    margin: 0;
+
+}
+
+figcaption {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+nav {
+    background: #fff;
 }

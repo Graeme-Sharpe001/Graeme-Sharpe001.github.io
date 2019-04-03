@@ -2,69 +2,83 @@
 
 <html lang = "en">
 
-	<head>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="css/main.css">
-		<title>HELLO WORLD</title>
-		<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	</head>
+  <head>
+    <meta charset="UTF-8">
+    <title>HELLO WORLD</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <link rel = "stylesheet" href = "https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+        <script src = "https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+        <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="css/main.css">
+  </head>
 
-	<body>
-         <aside>
-             <figure>
-                 <div id="avatar"></div>
-                 <figcaption>Graeme Sharpe</figcaption>
-             </figure>
-
-             <img src="images/menu.svg">
-             <nav>
-                 <ul>
-                     <li><a href="pages/personal_projects.html">Personal Projects</a></li>
-                     <li><a href="pages/gt_work.html">GT Course Work</a></li>
-                     <li><a href="pages/hackerrank.html">Hackerrank</a></li>
-                     <li><a href="pages/github.html">Github</a></li>
-                     <li><a href="pages/resume.html">Resume</a></li>
-                     <li><a href="pages/about_me.html">About Me</a></li>
-                 </ul>
-             </nav>
-
-         </aside>
-
+  <body>
          <main>
-             <h1>Welcome to my Website!</h1>
-             <p>
-             I taught myself how to use basic html and css to build a website
-             using github pages as a free hosting service and Firebase as a
-             free backend to showcase my projects and resourcefulness!
-             </p>
+            <div class = "mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+                  <header class = "mdl-layout__header mdl-color--light-blue-700">
+                    <!-- Top row, always visible -->
+                     <div class = "mdl-layout__header-row">
+                        <!-- Title -->
+                        <span class = "mdl-layout-title">Sharpe.life</span>
+                     </div>
 
-             <p>
-             The purpose of this website is to expand my knowledge of vital computing skills while also providing a
-             platform to showcase my personal projects, passions and persona.
-             </p>
+                     <!-- Tabs -->
+                     <div class = "mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--blue-grey-600">
+                        <a href = "#scroll-tab-1" class = "mdl-layout__tab is-active">Welcome!</a>
+                        <a href = "#scroll-tab-2" class = "mdl-layout__tab">Create Account or Sign In!</a>
+                        <a href = "#scroll-tab-3" class = "mdl-layout__tab">Special Thanks!</a>
+                     </div>
+                  </header>
 
-             <p>
-             Perhaps my favorite project is my Fantasy Binance Trader. It allows users to simulate trading and asset
-             management on one of the largest public exchanges. You will have to create a basic account so that your
-             data and assets can be stored once you leave my website.
-             </p>
+                  <div class = "mdl-layout__drawer">
+                     <span class = "mdl-layout-title">Graeme Sharpe</span>
+                     <nav class = "mdl-navigation">
+                        <a class = "mdl-navigation__link" href = "">Home</a>
+                        <a class = "mdl-navigation__link" href = "pages/personal_projects.html">Personal Projects</a>
+                        <a class = "mdl-navigation__link" href = "pages/gt_work.html">GT Course Work</a>
+                        <a class = "mdl-navigation__link" href = "pages/hackerrank.html">Hackerrank</a>
+                        <a class = "mdl-navigation__link" href = "pages/github.html">Github</a>
+                        <a class = "mdl-navigation__link" href = "pages/resume.html">Resume</a>
+                        <a class = "mdl-navigation__link" href = "pages/about_me.html">About Me</a>
+                     </nav>
+                  </div>
+                  
+                  <main class = "mdl-layout__content">
+                              <section class = "mdl-layout__tab-panel is-active" id = "scroll-tab-1">
+                                <div class = "page-content">
+                                  <h1>Welcome to my Website!</h1>
+                                  <p>
+                                  I taught myself how to use basic html and css to build a website
+                                  using github pages as a free hosting service and Firebase as a
+                                  free backend to showcase my projects and resourcefulness!
+                                  </p>
 
+                                  <p>
+                                  The purpose of this website is to expand my knowledge of vital computing skills while also providing a
+                                  platform to showcase my personal projects, passions and persona.
+                                  </p>
 
-             <a href="pages/trader.html" class="cta">Fantasy Binance Trader</a>
-
+                                  <p>
+                                  Perhaps my favorite project is my Fantasy Binance Trader. It allows users to simulate trading and asset
+                                  management on one of the largest public exchanges. You will have to create a basic account so that your
+                                  data and assets can be stored once you leave my website.
+                                  </p>
+                                </div>
+                              </section>
+                              <section class = "mdl-layout__tab-panel" id = "scroll-tab-2">
+                                 <div class = "page-content">
+                                  <h1>Please Create an Account</h1>
+                                  <p>Please register with an email and password.</p>
+                                  <input type="text" id="email" name="email" placeholder="Email"/>
+                                  &nbsp &nbsp &nbsp
+                                 <input type="text" id="password" name="password" placeholder="Password"/>
+                                 </div>
+                              </section>
+                              <section class = "mdl-layout__tab-panel" id = "scroll-tab-3">
+                                 <div class = "page-content">Tab 3 Contents</div>
+                              </section>
+                  </main>
+             </div>
          </main>
-
-
-         <script>
-             (function() {
-                let menu = document.querySelector('ul'),
-                    menulink = document.querySelector('img');
-
-                menulink.addEventListener('click', function(e) {
-                    menu.classList.toggle('active');
-                    e.preventDefault();
-                });
-            })();
-         </script>
-	</body>
+  </body>
 </html>

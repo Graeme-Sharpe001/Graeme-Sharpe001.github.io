@@ -6,3 +6,10 @@
 .mdl-card__media > img {
     max-width: 100%;
 }
+
+.mdl-layout__content {
+	background: -webkit-linear-gradient(45deg, #000 0%, #948F8F 100%);
+    background: linear-gradient(45deg, #fff 10%, #948F8F 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

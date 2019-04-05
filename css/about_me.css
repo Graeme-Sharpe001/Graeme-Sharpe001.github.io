@@ -13,9 +13,15 @@ body, html {
     background-attachment: fixed;
 }
 
+.mdl-layout__tab-panel {
+    margin-right: 5em;
+    margin-left: 5em;
+    margin-top: 2em;
+}
+
 .mdl-card__media {
-    background-color: mediumpurple;
     text-align: center;
+    background-image: url(../images/background_trippy_1.png);
 }
 
 .logo {
@@ -27,6 +33,7 @@ body, html {
     background-size: 80%;
     background-repeat: no-repeat;
 }
+
 
 /*.section-spacer {
     flex-grow: 1;

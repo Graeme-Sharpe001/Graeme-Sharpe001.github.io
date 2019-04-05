@@ -13,11 +13,11 @@ body, html {
     background-attachment: fixed;
 }
 
-.mdl-layout__tab-panel {
+/*.mdl-layout__tab-panel {
     margin-right: 5em;
     margin-left: 5em;
     margin-top: 2em;
-}
+}*/
 
 .mdl-card__media {
     text-align: center;
@@ -32,6 +32,15 @@ body, html {
     background-position: center;
     background-size: 80%;
     background-repeat: no-repeat;
+}
+
+@media only screen and (min-device-width: 768px){
+
+    .mdl-layout__tab-panel {
+        margin-right: 5em;
+        margin-left: 5em;
+        margin-top: 2em;
+    }
 }
 
 

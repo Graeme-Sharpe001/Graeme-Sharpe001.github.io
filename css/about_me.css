@@ -13,6 +13,25 @@ body, html {
     background-attachment: fixed;
 }
 
+.mdl-card__media {
+    background-color: mediumpurple;
+    text-align: center;
+}
+
+.logo {
+    margin-top: 5px;
+    width: 75px;
+    height: 75px;
+    background-image: url(../images/logo.png);
+    background-position: center;
+    background-size: 80%;
+    background-repeat: no-repeat;
+}
+
+/*.section-spacer {
+    flex-grow: 1;
+}*/
+
 /*aside {
     color: #fff;
     display: grid;

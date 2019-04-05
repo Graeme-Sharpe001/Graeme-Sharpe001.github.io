@@ -30,6 +30,14 @@ body, html {
     border-top-color: deepskyblue;
 }
 
+.mdl-textfield__input {
+    border-bottom: 1px solid #000;
+}
+
+.mdl-textfield__label {
+    color: black;
+}
+
 /*aside {
     color: #fff;
     display: grid;

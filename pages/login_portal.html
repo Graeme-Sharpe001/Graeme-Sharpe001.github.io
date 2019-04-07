@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>HELLO WORLD</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel = "stylesheet" href = "https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+    <script src = "https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+    <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href = "../css/resume.css">
+
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-functions.js"></script>
+  </head>
+
+  <body>
+         <main>
+            <div class = "mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+                  <header class = "mdl-layout__header mdl-color--light-blue-700">
+                    <!-- Top row, always visible -->
+                     <div class = "mdl-layout__header-row">
+                        <!-- Title -->
+                        <span class = "mdl-layout-title">Login Portal</span>
+                     </div>
+
+                     <!-- Tabs -->
+                     <div class = "mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--blue-grey-600">
+                        <a href = "#scroll-tab-1" class = "mdl-layout__tab is-active">Sign in or Register!</a>
+                     </div>
+                  </header>
+
+                  <div class = "mdl-layout__drawer">
+                     <span class = "mdl-layout-title">Graeme Sharpe</span>
+                     <nav class = "mdl-navigation">
+                        <a class = "mdl-navigation__link" href = "../index.html">Home</a>
+                        <a class = "mdl-navigation__link" href = "personal_projects.html">Personal Projects</a>
+                        <a class = "mdl-navigation__link" href = "gt_work.html">GT Course Work</a>
+                        <a class = "mdl-navigation__link" href = "hackerrank.html">Hackerrank</a>
+                        <a class = "mdl-navigation__link" href = "github.html">Github</a>
+                        <a class = "mdl-navigation__link" href = "resume.html">Resume</a>
+                        <a class = "mdl-navigation__link" href = "about_me.html">About Me</a>
+                     </nav>
+                  </div>
+                  
+                  <main class = "mdl-layout__content">
+                    <section class = "mdl-layout__tab-panel is-active" id = "scroll-tab-1">
+                      <div class = "page-content">
+
+                        <h1>Please Create an Account</h1>
+                        <p>Please register with an email and password.</p>
+                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                           <input class="mdl-textfield__input" type="text" id="username">
+                           <label class="mdl-textfield__label" for="username">Username</label>
+                          </div>
+                          &nbsp
+
+                          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                           <input class="mdl-textfield__input" type="text" id="pw">
+                           <label class="mdl-textfield__label" for="pw">Password</label>
+                          </div>
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="login()">Sign In</button>
+                          <div>
+
+
+                          </div>
+
+                      </div>
+                       
+                    </section>
+                  </main>
+             </div>
+         </main>
+
+         <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+             <script>
+               // Initialize Firebase
+               var config = {
+                 apiKey: "AIzaSyBU8qTyI8KRLzFt6X-lQQDIQKPefeFZiP4",
+                 authDomain: "graeme-sharpe-website.firebaseapp.com",
+                 databaseURL: "https://graeme-sharpe-website.firebaseio.com",
+                 projectId: "graeme-sharpe-website",
+                 storageBucket: "graeme-sharpe-website.appspot.com",
+                 messagingSenderId: "1057839992853"
+               };
+               firebase.initializeApp(config);
+             </script>
+
+             <script src="../js/main.js"></script>
+  </body>
+</html>

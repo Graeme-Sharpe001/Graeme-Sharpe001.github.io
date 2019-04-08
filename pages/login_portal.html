@@ -11,6 +11,11 @@
     <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href = "../css/resume.css">
 
+
+
+  </head>
+
+  <body>
     <!-- Firebase App is always required and must be first -->
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
 
@@ -20,9 +25,19 @@
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-messaging.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-functions.js"></script>
-  </head>
-
-  <body>
+    <script>
+                   // Initialize Firebase
+       var config = {
+         apiKey: "AIzaSyBU8qTyI8KRLzFt6X-lQQDIQKPefeFZiP4",
+         authDomain: "graeme-sharpe-website.firebaseapp.com",
+         databaseURL: "https://graeme-sharpe-website.firebaseio.com",
+         projectId: "graeme-sharpe-website",
+         storageBucket: "graeme-sharpe-website.appspot.com",
+         messagingSenderId: "1057839992853"
+       };
+       firebase.initializeApp(config);
+    </script>
+    <script src="../js/auth.js"></script>
          <main>
             <div class = "mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
                   <header class = "mdl-layout__header mdl-color--light-blue-700">
@@ -79,21 +94,5 @@
                   </main>
              </div>
          </main>
-
-         <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
-             <script>
-               // Initialize Firebase
-               var config = {
-                 apiKey: "AIzaSyBU8qTyI8KRLzFt6X-lQQDIQKPefeFZiP4",
-                 authDomain: "graeme-sharpe-website.firebaseapp.com",
-                 databaseURL: "https://graeme-sharpe-website.firebaseio.com",
-                 projectId: "graeme-sharpe-website",
-                 storageBucket: "graeme-sharpe-website.appspot.com",
-                 messagingSenderId: "1057839992853"
-               };
-               firebase.initializeApp(config);
-             </script>
-
-             <script src="../js/main.js"></script>
   </body>
 </html>

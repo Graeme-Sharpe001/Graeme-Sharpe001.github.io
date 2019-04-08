@@ -19,13 +19,20 @@ firebase.auth().onAuthStateChanged(function(userSignedIn) {
 
 function login() {
     window.alert("working");
-    var userEmail = document.getElementById("username").value;
-    var userPassword = document.getElementById("pw").value;
-    window.alert(userEmail + " " + userPassword);
+    var email = document.getElementById("username").value;
+    var password = document.getElementById("pw").value;
+    window.alert(email + " " + password);
 
-    firebase.auth().createWithEmailAndPassword(userEmail, userPassword).catch(function(error) {
+    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
-        window.alert(errorMessage);
+        // ...
     });
+
+    // firebase.auth().createWithEmailAndPassword(userEmail, userPassword).catch(function(error) {
+    //     var errorCode = error.code;
+    //     var errorMessage = error.message;
+    //     window.alert(errorMessage);
+    // });
 }

@@ -11,6 +11,25 @@ body, html {
     background: linear-gradient(45deg, #fff 10%, #948F8F 100%);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    text-align: center;
+}
+
+table {
+    background-color: antiquewhite;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 2px solid #fffff0;
+    text-align: left;
+    padding: 8px;
+}
+
+
+tr:nth-child(even) {
+    background-color: aliceblue;
 }
 
 /*aside {

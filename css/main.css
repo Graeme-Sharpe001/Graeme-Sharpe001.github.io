@@ -12,22 +12,6 @@ body, html {
     background-repeat: no-repeat;
     background-attachment: fixed;
     text-align: center;
-
-    border-left-style: solid;
-    border-left-width: thick;
-    border-left-color: deepskyblue;
-
-    border-right-style: solid;
-    border-right-width: thick;
-    border-right-color: deepskyblue;
-
-    border-bottom-style: solid;
-    border-bottom-width: thick;
-    border-bottom-color: deepskyblue;
-
-    border-top-style: solid;
-    border-top-width: thick;
-    border-top-color: deepskyblue;
 }
 
 .mdl-textfield__input {

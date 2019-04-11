@@ -10,6 +10,28 @@
         <script src = "https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
         <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="../css/gt_work.css">
+
+        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-messaging.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyBXWzlqzNYqxQAX-UBwqRsEGpVdfirb--s",
+                authDomain: "rat-app-2340t10.firebaseapp.com",
+                databaseURL: "https://rat-app-2340t10.firebaseio.com",
+                projectId: "rat-app-2340t10",
+                storageBucket: "rat-app-2340t10.appspot.com",
+                messagingSenderId: "402779344129"
+            };
+            firebase.initializeApp(config);
+            </script>
+
+          <script src="../projects/gt_work/main.js"></script>
   </head>
 
   <body>
@@ -24,9 +46,9 @@
 
                      <!-- Tabs -->
                      <div class = "mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--blue-grey-600">
-                        <a href = "#scroll-tab-1" class = "mdl-layout__tab is-active">Welcome!</a>
-                        <a href = "#scroll-tab-2" class = "mdl-layout__tab">Create Account or Sign In!</a>
-                        <a href = "#scroll-tab-3" class = "mdl-layout__tab">Special Thanks!</a>
+                        <a href = "#scroll-tab-1" class = "mdl-layout__tab is-active">First Website</a>
+                        <a href = "#scroll-tab-2" class = "mdl-layout__tab">Junior Desgin App</a>
+                        <a href = "#scroll-tab-3" class = "mdl-layout__tab">N/A</a>
                      </div>
                   </header>
 
@@ -45,9 +67,101 @@
                   
                   <main class = "mdl-layout__content">
                               <section class = "mdl-layout__tab-panel is-active" id = "scroll-tab-1">
-                                 <div class = "page-content">Profile</div>
-                                 <h1>Please Create an Account</h1>
-                                 <p>Please register with an email and password.</p>
+
+                                <h1>Welcome to Ratfinder!</h1>
+                                <IMG SRC="../projects/gt_work/giphy-downsized.gif">
+                                <p>Please input your login information or register</p>
+                                <form>
+                                    User Email: <input id="email" type="text" name="email"><br>
+                                    Password : <input id="password" type="text" name="password"><br>
+                                    <input type="button" value="Login" onclick="checkLogin()">
+                                    <input type="button" value="Register" onclick="register()">
+                                    <input type="button" value="Sign Out" onclick="signOut()">
+
+                                </form>
+
+                                <div id = "vision" style="display: none">
+
+                                <p>Most Recent Rat Sitings</p>
+
+                                <table id = "recentRats" onload="fillTable();">
+                                <script>fillTable();</script>
+                                <tr>
+                                    <th>Unique Key</th>
+                                    <th>City</th>
+                                    <th>Borough</th>
+                                    <th>Address</th>
+                                    <th>Latitude</th>
+                                    <th>Longitude</th>
+                                  </tr>
+                                </table>
+
+                                <form>
+
+                                    <input type="button" value="Refresh Table" onclick="fillTable()">
+
+                                </form>
+
+                                <p>The Map will display locations of rats in a given date range</p>
+
+                                <div id="map" style="width:400px;height:400px"></div>
+
+                                <p>Please input the date in the format YYYYMMDD</p>
+
+                                <form>
+                                    Start Date : <input id="start" type="text" name="start"><br>
+                                    End Date : <input id="end" type="text" name="end"><br>
+                                    <input type="button" value="Display Rats" onclick="displayRats()">
+
+                                </form>
+
+                                <p>A Graph showing historical rat trends.</p>
+
+                                <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                                <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                                <script>
+                                window.onload = graph()
+                                </script>
+                                <form>
+                                    Select Year : <input id="year" type="text" name="start"><br>
+                                    <input type="button" value="Update Graph" onclick="graph()">
+                                    <input type="button" value="Update Graph by Borough" onclick="graphByBorough()">
+
+                                </form>
+
+
+
+                                <p>Fill out the form below to submit a new rat sighting
+                                   Created Date Int: YYYYMMDD </p>
+                                <form>
+                                    Borough : <input id="borough" type="text" name="start"><br>
+                                    City : <input id="city" type="text" name="end"><br>
+                                    Created Date : <input id="date" type="text" name="start"><br>
+                                    Created Date Int : <input id="date int" type="text" name="end"><br>
+                                    Incident Address : <input id="address" type="text" name="start"><br>
+                                    Incident Zip : <input id="zip" type="text" name="end"><br>
+                                    Location Type : <input id="type" type="text" name="start"><br>
+                                    Latitude : <input id="lat" type="text" name="end"><br>
+                                    Longitude : <input id="long" type="text" name="end"><br>
+                                    Unique Key : <input id="key" type="text" name="end"><br>
+                                    <input type="button" value="Submit new Rat Sighting" onclick="newRatForm()">
+
+                                </form>
+
+                                </div>
+
+
+
+
+
+                                <!--
+                                These script tags load jQuery, any plugins you've downloaded,
+                                and your main JavaScript file into your web page
+                                -->
+
+                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl98oteMFE2sfAU3TKpeQD1Mtj65AX3Rs&callback=myMap"
+                                    async defer></script>
+
                               </section>
                               <section class = "mdl-layout__tab-panel" id = "scroll-tab-2">
                                  <div class = "page-content">Tab 2 Contents</div>

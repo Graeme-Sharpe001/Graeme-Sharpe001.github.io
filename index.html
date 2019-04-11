@@ -14,6 +14,30 @@
   </head>
 
   <body>
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-functions.js"></script>
+    <script>
+                   // Initialize Firebase
+       var config = {
+         apiKey: "AIzaSyBU8qTyI8KRLzFt6X-lQQDIQKPefeFZiP4",
+         authDomain: "graeme-sharpe-website.firebaseapp.com",
+         databaseURL: "https://graeme-sharpe-website.firebaseio.com",
+         projectId: "graeme-sharpe-website",
+         storageBucket: "graeme-sharpe-website.appspot.com",
+         messagingSenderId: "1057839992853"
+       };
+       firebase.initializeApp(config);
+    </script>
+
+    <script src="js/main.js"></script>
+
          <main>
             <div class = "mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
                   <header class = "mdl-layout__header mdl-color--light-blue-700">
@@ -25,9 +49,14 @@
 
                         <div class="mdl-layout-spacer"></div>
 
-                        <div>
+                        <div id="signIn_div">
                             <a href="pages/login_portal.html"><button class="mdl-button mdl-js-button mdl-js-ripple-effect">Sign In</button></a>
                         </div>
+
+                        <div id="account_div">
+                            <a href="pages/account.html"><button class="mdl-button mdl-js-button mdl-js-ripple-effect">Account</button></a>
+                        </div>
+
                      </div>
 
                      <!-- Tabs -->

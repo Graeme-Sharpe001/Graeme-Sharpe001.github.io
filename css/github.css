@@ -15,6 +15,9 @@ body, html {
     text-decoration: none;
 }
 
+button {
+    border: 1px solid black;
+}
 /*aside {
     color: #fff;
     display: grid;

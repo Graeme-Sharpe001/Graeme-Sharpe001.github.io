@@ -1,10 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Marsha's Story</title>
-</head>
-<body>
 
-</body>
+<html lang = "en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Marsha's Story</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <link rel = "stylesheet" href = "https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+        <script src = "https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+        <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="../css/SLS.css">
+        <link rel="icon" href="images/logo.png">
+  </head>
+
+  <body>
+
+         <main>
+            <div class = "mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+                  <header class = "mdl-layout__header mdl-color--light-blue-700">
+                    <!-- Top row, always visible -->
+                     <div class = "mdl-layout__header-row">
+
+                        <!-- Title -->
+                        <span class = "mdl-layout-title">Voices from Fort Valley!</span>
+
+                        <div class="mdl-layout-spacer"></div>
+
+                     </div>
+
+                     <!-- Tabs -->
+                     <div class = "mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--blue-grey-600">
+                        <a href = "#scroll-tab-1" class = "mdl-layout__tab is-active">Woolfolk</a>
+                        <a href = "#scroll-tab-2" class = "mdl-layout__tab">Story Board</a>
+                        <a href = "#scroll-tab-3" class = "mdl-layout__tab">Special Thanks!</a>
+                     </div>
+                  </header>
+
+                  <main class = "mdl-layout__content">
+	                <section class = "mdl-layout__tab-panel is-active" id = "scroll-tab-1">
+	                 <div class = "page-content">
+	                  <h1>Hear from the citizens of Fort Valley!</h1>
+
+	                  <audio controls>
+                        <source src="../audio/woolfolk.mp3" type="audio/mpeg">
+                        <embed height="50" width="100" src="../audio/woolfolk.mp3">
+                      </audio>
+
+	                 </div>
+	                </section>
+
+	                <section class = "mdl-layout__tab-panel" id = "scroll-tab-2">
+	                  <p>Coming soon!</p>
+	                </section>
+
+	                  <section class = "mdl-layout__tab-panel" id = "scroll-tab-3">
+	                     <div class = "page-content">
+	                       <br>
+	                       <br>
+	                       <p>We'd like to give special thanks to PSE for the information, insight, and inspiration they garnered in fulfilling the position!</p>
+	                       <br>
+	                       <br>
+	                       <p>Also a special shout to to our Professors: Dr. Cobb, Dr. Hirsch, and Dr. Toktay!</p>
+
+	                     </div>
+	                  </section>
+                  </main>
+             </div>
+         </main>
+  </body>
 </html>

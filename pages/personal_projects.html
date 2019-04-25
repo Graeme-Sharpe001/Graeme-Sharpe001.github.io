@@ -4,15 +4,39 @@
 
   <head>
     <meta charset="UTF-8">
-    <title>HELLO WORLD</title>
+    <title>Personal Projects</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
       <link rel = "stylesheet" href = "https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
         <script src = "https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
         <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="../css/personal_projects.css">
+
   </head>
 
   <body>
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-functions.js"></script>
+    <script>
+    // Initialize Firebase
+       var config = {
+         apiKey: "AIzaSyBU8qTyI8KRLzFt6X-lQQDIQKPefeFZiP4",
+         authDomain: "graeme-sharpe-website.firebaseapp.com",
+         databaseURL: "https://graeme-sharpe-website.firebaseio.com",
+         projectId: "graeme-sharpe-website",
+         storageBucket: "graeme-sharpe-website.appspot.com",
+         messagingSenderId: "1057839992853"
+       };
+       firebase.initializeApp(config);
+    </script>
+    <script src="../js/binance.js"></script>
+    <script src="../js/main.js"></script>
          <main>
             <div class = "mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
                   <header class = "mdl-layout__header mdl-color--light-blue-700">
@@ -20,6 +44,17 @@
                      <div class = "mdl-layout__header-row">
                         <!-- Title -->
                         <span class = "mdl-layout-title">Personal Projects</span>
+
+                        <div class="mdl-layout-spacer"></div>
+
+                        <div id="signIn_div">
+                            <a href="login_portal.html"><button class="mdl-button mdl-js-button mdl-js-ripple-effect">Sign In</button></a>
+                        </div>
+
+                        <div id="account_div">
+                            <a href="account.html"><button class="mdl-button mdl-js-button mdl-js-ripple-effect">Account</button></a>
+                        </div>
+
                      </div>
 
                      <!-- Tabs -->
@@ -75,6 +110,120 @@
                       <p>Started as a passion Summer/Fall 2018.  A Web app implementation with account portfolio tracking.</p>
                       <br>
                       <p>Coming Next!</p>
+
+                      <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="wsTest()">Start Simulation</button>
+                      <br>
+
+                      <div id="simulator">
+
+                        <div id="orderBook">
+                          <h3>Order Book</h3>
+
+                          <ul id="asks">
+                          </ul>
+
+                          <ul id="currentPrice">
+                          </ul>
+
+                          <ul id="bids">
+                          </ul>
+                        </div>
+
+
+                        <div id="accountA">
+                          <div id="name">Name:</div>
+                          <div id="initDollars">Initial Dollars:</div>
+                          <div id="portValue">Current Portfolio Value:</div>
+                        </div>
+
+                        <div id="accountB">
+                          <div id="name">Name:</div>
+                          <div id="initDollars">Initial Dollars:</div>
+                          <div id="portValue">Current Portfolio Value:</div>
+                        </div>
+
+                        <div id="accountC">
+                          <div id="name">Name:</div>
+                          <div id="initDollars">Initial Dollars:</div>
+                          <div id="portValue">Current Portfolio Value:</div>
+                        </div>
+
+                        <div id="accountD">
+                          <div id="name">Name:</div>
+                          <div id="initDollars">Initial Dollars:</div>
+                          <div id="portValue">Current Portfolio Value:</div>
+                        </div>
+
+
+                        <div id="chart">
+                          <!-- TradingView Widget BEGIN -->
+                          <div class="tradingview-widget-container">
+                            <div id="tradingview_1996d"></div>
+                            <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BINANCE-BTCUSDT/" rel="noopener" target="_blank"><span class="blue-text">BTCUSDT Chart</span></a> by TradingView</div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                            <script type="text/javascript">
+                            new TradingView.widget(
+                            {
+                            "width": 1000,
+                            "height": 525,
+                            "symbol": "BINANCE:BTCUSDT",
+                            "interval": "D",
+                            "timezone": "Etc/UTC",
+                            "theme": "Dark",
+                            "style": "1",
+                            "locale": "en",
+                            "toolbar_bg": "#f1f3f6",
+                            "enable_publishing": false,
+                            "allow_symbol_change": true,
+                            "container_id": "tradingview_1996d"
+                          }
+                            );
+                            </script>
+                          </div>
+                          <!-- TradingView Widget END -->
+                        </div>
+
+                        <div id="buySell">
+                          <h3>Buy/Sell</h3>
+                          <br>
+                          <input class="mdl-textfield__input" type="text" id="pw">
+                          <label class="mdl-textfield__label" for="pw">Buy</label>
+                          <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="">Buy</button>
+
+                          <input class="mdl-textfield__input" type="text" id="pw">
+                          <label class="mdl-textfield__label" for="pw">Sell</label>
+                          <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="">Sell</button>
+                        </div>
+
+                      </div>
+
+
+<!--
+                         <aside>
+                           <figure>
+                               <div id="avatar"></div>
+                               <figcaption>John Doe</figcaption>
+                           </figure>
+                           <img src="images/menu.svg">
+                           <nav>
+                               <ul>
+                                   <li><a href="#">Home</a></li>
+                                   <li><a href="#">Binance Fantasy Trader</a></li>
+                                   <li><a href="#">Chat With Me</a></li>
+                                   <li><a href="#">Account Setting</a></li>
+                               </ul>
+                           </nav>
+                       </aside>
+                       <main>
+                           <h1>I'm a designer</h1>
+                           <p>Slowing my making this website a reality.</p>
+
+                           <a href="#" class="cta">Nothing yet!</a>
+                       </main>
+
+                      <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="test()">Test</button>
+                      <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="wsTest()">Test WebSocket</button>
+                      -->
                     </section>
                     <section class = "mdl-layout__tab-panel" id = "scroll-tab-3">
                       <p>Started as a passion Winter Break 2018. However, with no steady access to Xcode I may take awhile to appear :(</p>

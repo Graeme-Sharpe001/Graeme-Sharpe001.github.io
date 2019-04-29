@@ -137,9 +137,9 @@
                         </div>
 
                         <div id="accountB">
-                          <div id="name">Name:</div>
-                          <div id="initDollars">Initial Dollars:</div>
-                          <div id="portValue">Current Portfolio Value:</div>
+                          <div id="usd">USD: </div>
+                          <div id="btc">BTC: </div>
+                          <div id="profit">Profit: </div>
                         </div>
 
                         <div id="accountC">
@@ -186,13 +186,13 @@
                         <div id="buySell">
                           <h3>Buy/Sell</h3>
                           <br>
-                          <input class="mdl-textfield__input" type="text" id="pw">
+                          <input class="mdl-textfield__input" type="text" id="buy">
                           <label class="mdl-textfield__label" for="pw">Buy</label>
-                          <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="">Buy</button>
+                          <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="buy()">Amount to Buy</button>
 
-                          <input class="mdl-textfield__input" type="text" id="pw">
+                          <input class="mdl-textfield__input" type="text" id="sell">
                           <label class="mdl-textfield__label" for="pw">Sell</label>
-                          <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="">Sell</button>
+                          <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="sell()">Amount to Sell</button>
                         </div>
 
                       </div>

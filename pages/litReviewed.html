@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>HELLO WORLD</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel = "stylesheet" href = "https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+    <script src = "https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+    <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href = "../css/resume.css">
+  </head>
+
+  <body>
+         <main>
+            <div class = "mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+                  <header class = "mdl-layout__header mdl-color--light-blue-700">
+                    <!-- Top row, always visible -->
+                     <div class = "mdl-layout__header-row">
+                        <!-- Title -->
+                        <span class = "mdl-layout-title">Resume</span>
+                     </div>
+
+                     <!-- Tabs -->
+                     <div class = "mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--blue-grey-600">
+                        <a href = "#scroll-tab-1" class = "mdl-layout__tab is-active">Current Resume</a>
+                     </div>
+                  </header>
+
+                  <div class = "mdl-layout__drawer">
+                     <span class = "mdl-layout-title">Graeme Sharpe</span>
+                     <nav class = "mdl-navigation">
+                        <a class = "mdl-navigation__link" href = "../index.html">Home</a>
+                        <a class = "mdl-navigation__link" href = "personal_projects.html">Personal Projects</a>
+                        <a class = "mdl-navigation__link" href = "gt_work.html">GT Course Work</a>
+                        <a class = "mdl-navigation__link" href = "hackerrank.html">Hackerrank</a>
+                        <a class = "mdl-navigation__link" href = "github.html">Github</a>
+                        <a class = "mdl-navigation__link" href = "resume.html">Resume</a>
+                        <a class = "mdl-navigation__link" href = "about_me.html">About Me</a>
+                     </nav>
+                  </div>
+                  
+                  <main class = "mdl-layout__content">
+                    <section class = "mdl-layout__tab-panel is-active" id = "scroll-tab-1">
+                      <div class = "page-content" id= "resume-page">
+                        <embed src="../images/Getting_Things_Done.pdf" type="application/pdf" class="responsive"></embed>
+                      </div>
+                       
+                    </section>
+                  </main>
+             </div>
+         </main>
+  </body>
+</html>

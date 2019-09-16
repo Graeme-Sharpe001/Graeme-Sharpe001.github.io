@@ -32,6 +32,12 @@ tr:nth-child(even) {
     background-color: aliceblue;
 }
 
+#sectionView {
+    display: grid;
+    grid-template-columns: [first] 250px [line2a] 250px [line2b] 250px [line2c] 250px [line2d] 250px [line3] 250px [lastCol];
+    grid-template-rows: [row1] 6000px [row2] 525px [row3] auto [lastRow];
+}
+
 /*aside {
     color: #fff;
     display: grid;

@@ -43,6 +43,7 @@ body, html {
     background: #fff;
     border-radius: 2px;
     box-sizing: border-box;
+    margin: 5px 20px 10px;
 }
 
 table {
@@ -69,6 +70,29 @@ tr:nth-child(even) {
     grid-template-rows: [row1] 6000px [row2] 525px [row3] auto [lastRow];
 }
 
+@media only screen and (min-device-width: 768px){
+    #Dijkstra {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        font-size: 16px;
+        font-weight: 400;
+        overflow: hidden;
+        min-height: auto;
+        width: auto;
+        z-index: 1;
+        position: relative;
+        background: #fff;
+        border-radius: 2px;
+        box-sizing: border-box;
+        margin: 5px 100px 10px;
+    }
+}
 /*aside {
     color: #fff;
     display: grid;
@@ -152,7 +176,7 @@ p {
 
 
 
-@media only screen and (min-device-width: 768px){
+
 
     body {
         display: grid;

@@ -18,21 +18,10 @@
         <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-messaging.js"></script>
 
         <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
-        <script>
-            // Initialize Firebase
-            var config = {
-                apiKey: "AIzaSyBXWzlqzNYqxQAX-UBwqRsEGpVdfirb--s",
-                authDomain: "rat-app-2340t10.firebaseapp.com",
-                databaseURL: "https://rat-app-2340t10.firebaseio.com",
-                projectId: "rat-app-2340t10",
-                storageBucket: "rat-app-2340t10.appspot.com",
-                messagingSenderId: "402779344129"
-            };
-            firebase.initializeApp(config);
-            </script>
 
-          <script src="../js/ratfinder.js"></script>
-          <script src="../js/gtWork.js"></script>
+
+        <script src="../js/ratfinder.js"></script>
+        <script src="../js/gtWork.js"></script>
   </head>
 
   <body>
@@ -47,9 +36,10 @@
 
                      <!-- Tabs -->
                      <div class = "mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--blue-grey-600">
-                        <a href = "#scroll-tab-1" class = "mdl-layout__tab is-active">First Website</a>
-                        <a href = "#scroll-tab-2" class = "mdl-layout__tab">Junior Desgin App</a>
-                        <a href = "#scroll-tab-3" class = "mdl-layout__tab">Code Examples</a>
+                       <a href = "#scroll-tab-1" class = "mdl-layout__tab is-active">Courses Taken</a>
+                       <a href = "#scroll-tab-2" class = "mdl-layout__tab">First Web App</a>
+                       <a href = "#scroll-tab-3" class = "mdl-layout__tab">Junior Desgin App</a>
+                       <a href = "#scroll-tab-4" class = "mdl-layout__tab">Code Examples</a>
                      </div>
                   </header>
 
@@ -68,178 +58,338 @@
                   </div>
                   
                   <main class = "mdl-layout__content">
-                              <section class = "mdl-layout__tab-panel is-active" id = "scroll-tab-1">
-                                <p>Created as EC for CS2340 Spring 2017. Exclusively my own work.</p>
-                                <br>
 
-                                <h1>Welcome to Ratfinder!</h1>
-                                <IMG SRC="../images/giphy-downsized.gif">
-                                <p>Please input your login information or register</p>
-                                <form>
-                                    User Email: <input id="email" type="text" name="email"><br>
-                                    Password : <input id="password" type="text" name="password"><br>
-                                    <input type="button" value="Login" onclick="checkLogin()">
-                                    <input type="button" value="Register" onclick="register()">
-                                    <input type="button" value="Sign Out" onclick="signOut()">
-
-                                </form>
-
-                                <div id = "vision" style="display: none">
-
-                                <p>Most Recent Rat Sitings</p>
-
-                                <table id = "recentRats" onload="fillTable();">
-                                <script>fillTable();</script>
-                                <tr>
-                                    <th>Unique Key</th>
-                                    <th>City</th>
-                                    <th>Borough</th>
-                                    <th>Address</th>
-                                    <th>Latitude</th>
-                                    <th>Longitude</th>
-                                  </tr>
-                                </table>
-
-                                <form>
-
-                                    <input type="button" value="Refresh Table" onclick="fillTable()">
-
-                                </form>
-
-                                <p>The Map will display locations of rats in a given date range</p>
-
-                                <div id="map" style="height:400px;width:400px;display:inline-block"></div>
-
-                                <p>Please input the date in the format YYYYMMDD</p>
-
-                                <form>
-                                    Start Date : <input id="start" type="text" name="start"><br>
-                                    End Date : <input id="end" type="text" name="end"><br>
-                                    <input type="button" value="Display Rats" onclick="displayRats()">
-
-                                </form>
-
-                                <p>A Graph showing historical rat trends.</p>
-
-                                <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-                                <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-                                <script>
-                                window.onload = graph()
-                                </script>
-                                <form>
-                                    Select Year : <input id="year" type="text" name="start"><br>
-                                    <input type="button" value="Update Graph" onclick="graph()">
-                                    <input type="button" value="Update Graph by Borough" onclick="graphByBorough()">
-
-                                </form>
+                  <!-- COURSES TAKEN ---------------------------------------->
 
 
+                      <section class = "mdl-layout__tab-panel is-active" id = "scroll-tab-1">
+                        <div class = "page-content">
 
-                                <p>Fill out the form below to submit a new rat sighting
-                                   Created Date Int: YYYYMMDD </p>
-                                <form>
-                                    Borough : <input id="borough" type="text" name="start"><br>
-                                    City : <input id="city" type="text" name="end"><br>
-                                    Created Date : <input id="date" type="text" name="start"><br>
-                                    Created Date Int : <input id="date int" type="text" name="end"><br>
-                                    Incident Address : <input id="address" type="text" name="start"><br>
-                                    Incident Zip : <input id="zip" type="text" name="end"><br>
-                                    Location Type : <input id="type" type="text" name="start"><br>
-                                    Latitude : <input id="lat" type="text" name="end"><br>
-                                    Longitude : <input id="long" type="text" name="end"><br>
-                                    Unique Key : <input id="key" type="text" name="end"><br>
-                                    <input type="button" value="Submit new Rat Sighting" onclick="newRatForm()">
-
-                                </form>
-
-                                </div>
-
-
-
-
-
-                                <!--
-                                These script tags load jQuery, any plugins you've downloaded,
-                                and your main JavaScript file into your web page
-                                -->
-
-                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl98oteMFE2sfAU3TKpeQD1Mtj65AX3Rs&callback=myMap"
-                                    async defer></script>
-
-                              </section>
-                              <section class = "mdl-layout__tab-panel" id = "scroll-tab-2">
-                                <p>Designed Fall 2017 and implemented Spring 2018. Coming Soon!</p>
-                                <br>
-                              </section>
-                              <section class = "mdl-layout__tab-panel" id = "scroll-tab-3">
-                                 <div class = "page-content">
-
-                                 <!--
-                                 Dijkstra's Algo
-                                 -->
-                                   <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col" id="Dijkstra">
-                                       <div class="mdl-card__media">
-                                         <h3>Dijkstra's Algorithm</h3>
-                                         <div id="signIn_div">
-                                           <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="expand_1()">Expand</button>
-                                         </div>
-                                       </div>
-
-                                       <div class="mdl-color-text--grey-700 mdl-card__supporting text meta">
-                                         <div class="logo"></div>
-                                         <div class="section-spacer"></div>
-                                       </div>
-
-                                       <div class="mdl-color-text--grey-700 mdl-card__supporting-text" id="expand_1" style="display: none">
-                                         <script src="https://gist.github.com/Graeme-Sharpe001/ee3db0c66105287afe569ceba80400d0.js"></script>
-                                       </div>
-                                      </div>
-
-                                 <!--
-                                 Sorting Algo
-                                 -->
-                                   <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col" id="Dijkstra">
-                                       <div class="mdl-card__media">
-                                         <h3>Sorting Algorithms</h3>
-                                         <div id="signIn_div">
-                                           <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="expand_2()">Expand</button>
-                                         </div>
-                                       </div>
-
-                                       <div class="mdl-color-text--grey-700 mdl-card__supporting text meta">
-                                         <div class="logo"></div>
-                                         <div class="section-spacer"></div>
-                                       </div>
-
-                                       <div class="mdl-color-text--grey-700 mdl-card__supporting-text" id="expand_2" style="display: none">
-                                         <script src="https://gist.github.com/Graeme-Sharpe001/c36f3a432f358e8a1d190ee56f5d840f.js"></script>
-                                       </div>
-                                      </div>
-
-                                 <!--
-                                 ML Algo
-                                 -->
-                                   <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col" id="Dijkstra">
-                                       <div class="mdl-card__media">
-                                         <h3>Machine Learning Algorithms</h3>
-                                         <div id="signIn_div">
-                                           <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="expand_3()">Expand</button>
-                                         </div>
-                                       </div>
-
-                                       <div class="mdl-color-text--grey-700 mdl-card__supporting text meta">
-                                         <div class="logo"></div>
-                                         <div class="section-spacer"></div>
-                                       </div>
-
-                                       <div class="mdl-color-text--grey-700 mdl-card__supporting-text" id="expand_3" style="display: none">
-                                         <script src="https://gist.github.com/Graeme-Sharpe001/8ea8efae96688ee372c153f0849e491d.js"></script>
-                                       </div>
-                                      </div>
-
-
+                         <!--
+                         CS1332: Data Structures and Algorithms
+                         -->
+                           <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col" id="Dijkstra">
+                               <div class="mdl-card__media">
+                                 <h3>CS1332: Data Structures and Algorithms</h3>
+                                 <div id="signIn_div">
+                                   <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="expands('cs1332')">Expand</button>
                                  </div>
-                              </section>
+                               </div>
+
+                               <div class="mdl-color-text--grey-700 mdl-card__supporting text meta">
+                                 <div class="logo"></div>
+                                 <div class="section-spacer"></div>
+                               </div>
+
+                               <div class="mdl-color-text--grey-700 mdl-card__supporting-text" id="cs1332" style="display: none">
+                                 <script src="https://gist.github.com/Graeme-Sharpe001/ee3db0c66105287afe569ceba80400d0.js"></script>
+                               </div>
+                              </div>
+
+                         <!--
+                         CS2110: Computer Organization and Programming
+                         -->
+                           <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col" id="Dijkstra">
+                               <div class="mdl-card__media">
+                                 <h3>CS2110: Computer Organization and Programming</h3>
+                                 <div id="signIn_div">
+                                   <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="expands('cs2110')">Expand</button>
+                                 </div>
+                               </div>
+
+                               <div class="mdl-color-text--grey-700 mdl-card__supporting text meta">
+                                 <div class="logo"></div>
+                                 <div class="section-spacer"></div>
+                               </div>
+
+                               <div class="mdl-color-text--grey-700 mdl-card__supporting-text" id="cs2110" style="display: none">
+                                 <script src="https://gist.github.com/Graeme-Sharpe001/ee3db0c66105287afe569ceba80400d0.js"></script>
+                               </div>
+                              </div>
+
+
+                         <!--
+                         CS2340
+                         -->
+                           <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col" id="Dijkstra">
+                               <div class="mdl-card__media">
+                                 <h3>CS2340: Something something</h3>
+                                 <div id="signIn_div">
+                                   <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="expands('cs2340')">Expand</button>
+                                 </div>
+                               </div>
+
+                               <div class="mdl-color-text--grey-700 mdl-card__supporting text meta">
+                                 <div class="logo"></div>
+                                 <div class="section-spacer"></div>
+                               </div>
+
+                               <div class="mdl-color-text--grey-700 mdl-card__supporting-text" id="cs2340" style="display: none">
+                                 <script src="https://gist.github.com/Graeme-Sharpe001/ee3db0c66105287afe569ceba80400d0.js"></script>
+                               </div>
+                              </div>
+
+                         <!--
+                         Junior Capstone
+                         -->
+                           <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col" id="Dijkstra">
+                               <div class="mdl-card__media">
+                                 <h3>Junior Capstone</h3>
+                                 <div id="signIn_div">
+                                   <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="expands('capstone')">Expand</button>
+                                 </div>
+                               </div>
+
+                               <div class="mdl-color-text--grey-700 mdl-card__supporting text meta">
+                                 <div class="logo"></div>
+                                 <div class="section-spacer"></div>
+                               </div>
+
+                               <div class="mdl-color-text--grey-700 mdl-card__supporting-text" id="capstone" style="display: none">
+                                 <script src="https://gist.github.com/Graeme-Sharpe001/ee3db0c66105287afe569ceba80400d0.js"></script>
+                               </div>
+                              </div>
+
+                         <!--
+                         Game AI
+                         -->
+                           <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col" id="Dijkstra">
+                               <div class="mdl-card__media">
+                                 <h3>CS4731: Game AI </h3>
+                                 <div id="signIn_div">
+                                   <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="expands('cs4731')">Expand</button>
+                                 </div>
+                               </div>
+
+                               <div class="mdl-color-text--grey-700 mdl-card__supporting text meta">
+                                 <div class="logo"></div>
+                                 <div class="section-spacer"></div>
+                               </div>
+
+                               <div class="mdl-color-text--grey-700 mdl-card__supporting-text" id="cs4731" style="display: none">
+                                 <script src="https://gist.github.com/Graeme-Sharpe001/ee3db0c66105287afe569ceba80400d0.js"></script>
+                               </div>
+                              </div>
+
+                         <!--
+                         CS4641: Machine Learning
+                         -->
+                           <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col" id="Dijkstra">
+                               <div class="mdl-card__media">
+                                 <h3>CS4641: Machine Learning</h3>
+                                 <div id="signIn_div">
+                                   <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="expands('cs4641')">Expand</button>
+                                 </div>
+                               </div>
+
+                               <div class="mdl-color-text--grey-700 mdl-card__supporting text meta">
+                                 <div class="logo"></div>
+                                 <div class="section-spacer"></div>
+                               </div>
+
+                               <div class="mdl-color-text--grey-700 mdl-card__supporting-text" id="cs4641" style="display: none">
+                                 <script src="https://gist.github.com/Graeme-Sharpe001/c36f3a432f358e8a1d190ee56f5d840f.js"></script>
+                               </div>
+                              </div>
+
+                         <!--
+                         CS4646: ML for Trading
+                         -->
+                           <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col" id="Dijkstra">
+                               <div class="mdl-card__media">
+                                 <h3>CS4646: ML for Trading</h3>
+                                 <div id="signIn_div">
+                                   <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="expands('cs4646')">Expand</button>
+                                 </div>
+                               </div>
+
+                               <div class="mdl-color-text--grey-700 mdl-card__supporting text meta">
+                                 <div class="logo"></div>
+                                 <div class="section-spacer"></div>
+                               </div>
+
+                               <div class="mdl-color-text--grey-700 mdl-card__supporting-text" id="cs4646" style="display: none">
+                                 <script src="https://gist.github.com/Graeme-Sharpe001/8ea8efae96688ee372c153f0849e491d.js"></script>
+                               </div>
+                              </div>
+
+
+                         </div>
+                      </section>
+
+
+                      <section class = "mdl-layout__tab-panel" id = "scroll-tab-2">
+                        <p>Created as EC for CS2340 Spring 2017. Exclusively my own work.</p>
+                        <br>
+
+                        <h1>Welcome to Ratfinder!</h1>
+                        <IMG SRC="../images/giphy-downsized.gif">
+                        <p>Please input your login information or register</p>
+                        <form>
+                            User Email: <input id="email" type="text" name="email"><br>
+                            Password : <input id="password" type="text" name="password"><br>
+                            <input type="button" value="Login" onclick="checkLogin()">
+                            <input type="button" value="Register" onclick="register()">
+                            <input type="button" value="Sign Out" onclick="signOut()">
+
+                        </form>
+
+                        <div id = "vision" style="display: none">
+
+                        <p>Most Recent Rat Sitings</p>
+
+                        <table id = "recentRats" onload="fillTable();">
+                        <script>fillTable();</script>
+                        <tr>
+                            <th>Unique Key</th>
+                            <th>City</th>
+                            <th>Borough</th>
+                            <th>Address</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+                          </tr>
+                        </table>
+
+                        <form>
+
+                            <input type="button" value="Refresh Table" onclick="fillTable()">
+
+                        </form>
+
+                        <p>The Map will display locations of rats in a given date range</p>
+
+                        <div id="map" style="height:400px;width:400px;display:inline-block"></div>
+
+                        <p>Please input the date in the format YYYYMMDD</p>
+
+                        <form>
+                            Start Date : <input id="start" type="text" name="start"><br>
+                            End Date : <input id="end" type="text" name="end"><br>
+                            <input type="button" value="Display Rats" onclick="displayRats()">
+
+                        </form>
+
+                        <p>A Graph showing historical rat trends.</p>
+
+                        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                        <script>
+                        window.onload = graph()
+                        </script>
+                        <form>
+                            Select Year : <input id="year" type="text" name="start"><br>
+                            <input type="button" value="Update Graph" onclick="graph()">
+                            <input type="button" value="Update Graph by Borough" onclick="graphByBorough()">
+
+                        </form>
+
+
+
+                        <p>Fill out the form below to submit a new rat sighting
+                           Created Date Int: YYYYMMDD </p>
+                        <form>
+                            Borough : <input id="borough" type="text" name="start"><br>
+                            City : <input id="city" type="text" name="end"><br>
+                            Created Date : <input id="date" type="text" name="start"><br>
+                            Created Date Int : <input id="date int" type="text" name="end"><br>
+                            Incident Address : <input id="address" type="text" name="start"><br>
+                            Incident Zip : <input id="zip" type="text" name="end"><br>
+                            Location Type : <input id="type" type="text" name="start"><br>
+                            Latitude : <input id="lat" type="text" name="end"><br>
+                            Longitude : <input id="long" type="text" name="end"><br>
+                            Unique Key : <input id="key" type="text" name="end"><br>
+                            <input type="button" value="Submit new Rat Sighting" onclick="newRatForm()">
+
+                        </form>
+
+                        </div>
+
+
+
+
+
+                        <!--
+                        These script tags load jQuery, any plugins you've downloaded,
+                        and your main JavaScript file into your web page
+                        -->
+
+                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl98oteMFE2sfAU3TKpeQD1Mtj65AX3Rs&callback=myMap"
+                            async defer></script>
+
+                      </section>
+                      <section class = "mdl-layout__tab-panel" id = "scroll-tab-3">
+                        <p>Designed Fall 2017 and implemented Spring 2018. Coming Soon!</p>
+                        <br>
+                      </section>
+                      <section class = "mdl-layout__tab-panel" id = "scroll-tab-4">
+                         <div class = "page-content">
+
+                         <!--
+                         Dijkstra's Algo
+                         -->
+                           <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col" id="Dijkstra">
+                               <div class="mdl-card__media">
+                                 <h3>Dijkstra's Algorithm</h3>
+                                 <div id="signIn_div">
+                                   <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="expands('dijkstra')">Expand</button>
+                                 </div>
+                               </div>
+
+                               <div class="mdl-color-text--grey-700 mdl-card__supporting text meta">
+                                 <div class="logo"></div>
+                                 <div class="section-spacer"></div>
+                               </div>
+
+                               <div class="mdl-color-text--grey-700 mdl-card__supporting-text" id="dijkstra" style="display: none">
+                                 <script src="https://gist.github.com/Graeme-Sharpe001/ee3db0c66105287afe569ceba80400d0.js"></script>
+                               </div>
+                              </div>
+
+                         <!--
+                         Sorting Algo
+                         -->
+                           <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col" id="Dijkstra">
+                               <div class="mdl-card__media">
+                                 <h3>Sorting Algorithms</h3>
+                                 <div id="signIn_div">
+                                   <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="expands('sorting')">Expand</button>
+                                 </div>
+                               </div>
+
+                               <div class="mdl-color-text--grey-700 mdl-card__supporting text meta">
+                                 <div class="logo"></div>
+                                 <div class="section-spacer"></div>
+                               </div>
+
+                               <div class="mdl-color-text--grey-700 mdl-card__supporting-text" id="sorting" style="display: none">
+                                 <script src="https://gist.github.com/Graeme-Sharpe001/c36f3a432f358e8a1d190ee56f5d840f.js"></script>
+                               </div>
+                              </div>
+
+                         <!--
+                         ML Algo
+                         -->
+                           <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col" id="Dijkstra">
+                               <div class="mdl-card__media">
+                                 <h3>Machine Learning Algorithms</h3>
+                                 <div id="signIn_div">
+                                   <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="expands('ML')">Expand</button>
+                                 </div>
+                               </div>
+
+                               <div class="mdl-color-text--grey-700 mdl-card__supporting text meta">
+                                 <div class="logo"></div>
+                                 <div class="section-spacer"></div>
+                               </div>
+
+                               <div class="mdl-color-text--grey-700 mdl-card__supporting-text" id="ML" style="display: none">
+                                 <script src="https://gist.github.com/Graeme-Sharpe001/8ea8efae96688ee372c153f0849e491d.js"></script>
+                               </div>
+                              </div>
+
+
+                         </div>
+                      </section>
                   </main>
              </div>
          </main>

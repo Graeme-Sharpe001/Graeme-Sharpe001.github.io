@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
 
 body, html {
@@ -12,6 +13,11 @@ p {
 
 h1 {
     margin: 0 10px 10px;
+}
+
+h6 {
+    margin-left: 5%;
+    font-weight: bold;
 }
 
 .page-content {
@@ -30,8 +36,52 @@ h1 {
     border-bottom: 1px solid #000;
 }
 
+.mdl-card__media {
+    background-color: rgb(37, 213, 119);
+    background-repeat: repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-origin: padding-box;
+    background-attachment: scroll;
+    box-sizing: border-box;
+}
+
 .mdl-textfield__label {
     color: black;
+}
+
+#table1 {
+    display: grid;
+    grid-template-columns: [first1] 50% [mid] 50% [last1];
+}
+
+#skill_1 {
+    grid-column-start: first1;
+    grid-column-end: mid;
+    list-style-position: inside;
+}
+
+#implemented_1 {
+    grid-column-start: mid;
+    grid-column-end: last1;
+    list-style-position: inside;
+}
+
+#table2 {
+    display: grid;
+    grid-template-columns: [first1] 50% [mid] 50% [last1];
+}
+
+#skill_2 {
+    grid-column-start: first1;
+    grid-column-end: mid;
+    list-style-position: inside;
+}
+
+#implemented_2 {
+    grid-column-start: mid;
+    grid-column-end: last1;
+    list-style-position: inside;
 }
 
 @media only screen and (min-device-width: 768px) {
